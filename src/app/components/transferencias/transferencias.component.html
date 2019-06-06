@@ -1,0 +1,32 @@
+<section class="bg">
+  <div class="container">
+    <h1>Transferências</h1>
+    <h2>Preencha os campos abaixo:</h2>
+    <div class="flex flex-sp flex-cv saldo">
+      <p>Saldo total:</p>
+      <span>{{ conta.vlSaldo | currency:'BRL':true:'1.2-2' | trocaPontoVirgula }}</span>
+    </div>
+    <div class="flex flex-wr box-transferencia">
+      <div class="box">
+        <h2>Dados de transferência</h2>
+        <input [(ngModel)]='transferencia.agenciaDestino' name='agencia' type="text" placeholder="Número da agência">
+        <input [(ngModel)]='transferencia.contaDestino' name='conta' type="text" placeholder="Número da conta">
+        <input [(ngModel)]='transferencia.observacao' name='observacao' type="text" placeholder="Descrição">
+      </div>
+      <div class="w100">
+        <label>Valor: <input [(ngModel)]='transferencia.valor' type="text"></label>
+      </div>
+      <div class="w100">
+        <button (click)="realizaTransferencia()">Realizar transferência</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="modal-login flex flex-cv flex-ch">
+  <div class="box">
+    <h1>
+    </h1>
+    <button (click)="fecharModal()">Voltar</button>
+  </div>
+</section>

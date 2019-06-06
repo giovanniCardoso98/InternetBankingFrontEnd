@@ -1,0 +1,113 @@
+nav {
+    background: #ffffff none repeat scroll 0 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    left: 0;
+    padding: 15px 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    font-size: 14px;
+}
+
+.logo {
+    width: 170px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+nav li a {
+    color: #000000;
+    font-family: OpenSans-Bold;
+    padding: 5px 10px;
+    -webkit-transition: all 500ms cubic-bezier(0.000, 0.000, 0.380, 1.000);
+    -moz-transition: all 500ms cubic-bezier(0.000, 0.000, 0.380, 1.000);
+    -o-transition: all 500ms cubic-bezier(0.000, 0.000, 0.380, 1.000);
+    transition: all 500ms cubic-bezier(0.000, 0.000, 0.380, 1.000);
+}
+
+nav ul>li>a:hover,
+nav ul>li>a:focus {
+    background: #000000 none repeat scroll 0 0;
+    color: #ffffff;
+}
+
+nav ul>li>a.active {
+    background: #000000 none repeat scroll 0 0;
+    color: #ffffff;
+}
+
+.b-menu-mkdt {
+    height: 35px;
+    width: 45px;
+    display: none;
+    cursor: pointer;
+}
+
+.b-menu-mkdt u {
+    border-bottom: 5px solid #000000;
+    display: block;
+    margin-bottom: 8px;
+    position: relative;
+    opacity: 1;
+    transform: rotate(0deg);
+    top: 0;
+    cursor: pointer;
+    -webkit-transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+    -moz-transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+    -o-transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+    transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+}
+
+nav.ativo .b-menu-mkdt u:nth-child(1) {
+    top: 15px;
+    transform: rotate(45deg);
+}
+
+nav.ativo .b-menu-mkdt u:nth-child(2) {
+    opacity: 0;
+}
+
+nav.ativo .b-menu-mkdt u:nth-child(3) {
+    top: -11px;
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 992px) {
+    .b-menu-mkdt {
+        display: block;
+    }
+    nav ul {
+        position: relative;
+        width: 100%;
+        top: -100px;
+        margin-top: 0;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        -webkit-transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        -moz-transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        -o-transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+        transition: all 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+    }
+    nav.ativo ul {
+        display: block;
+        max-height: 600px;
+        margin-top: 15px;
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+    nav ul li {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    nav li a {
+        display: block;
+        padding: 10px 0;
+    }
+}

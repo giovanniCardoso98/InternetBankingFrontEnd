@@ -1,0 +1,48 @@
+.header {
+    background: #dddddd;
+    font-family: OpenSans-Regular;
+    font-size: 13px;
+    color: #000000;
+    text-align: right;
+    .conta {
+        float: left;
+        p {
+            margin: 10px 15px 10px 0;
+        }
+    }
+    .sair {
+        float: right;
+        span {
+            margin: 10px 15px 10px 0;
+        }
+        button {
+            background: transparent none repeat scroll 0 0;
+            border: 2px solid #000000;
+            color: #000000;
+            font-family: OpenSans-Regular;
+            font-size: 12px;
+            padding: 0 10px;
+            text-align: center;
+            -webkit-transition: all 500ms cubic-bezier(0.000, 0.000, 0.380, 1.000);
+            -moz-transition: all 500ms cubic-bezier(0.000, 0.000, 0.380, 1.000);
+            -o-transition: all 500ms cubic-bezier(0.000, 0.000, 0.380, 1.000);
+            transition: all 500ms cubic-bezier(0.000, 0.000, 0.380, 1.000);
+            &:hover {
+                background: #000000;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+@media (max-width: 762px) {
+    .header .conta {
+        float: none;
+        justify-content: center;
+    }
+
+    .header .sair {
+      float: none;
+      justify-content: center;
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<nav>
+  <div class="container">
+    <div class="flex flex-wr flex-cv flex-sp">
+      <img class="logo" src='../../assets/logo-preto.png' alt="Logo" />
+      <a (click)="ativaMenu()" class="b-menu-mkdt">
+        <u></u>
+        <u></u>
+        <u></u>
+      </a>
+      <ul>
+        <li (click)="desativaMenu()">
+          <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+        </li>
+        <li (click)="desativaMenu()">
+          <a [routerLink]="['/extrato']" routerLinkActive="active">Extrato</a>
+        </li>
+        <li (click)="desativaMenu()">
+          <a [routerLink]="['/transferencias']" routerLinkActive="active">Transferências</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

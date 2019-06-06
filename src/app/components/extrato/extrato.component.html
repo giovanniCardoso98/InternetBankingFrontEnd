@@ -1,0 +1,36 @@
+<section class="bg">
+  <div class="container">
+    <h1>Extrato</h1>
+    <h2>Confira suas transações:</h2>
+    <div class="flex flex-sp flex-cv saldo">
+      <p>Saldo total:</p>
+      <span>{{ conta.vlSaldo | currency:'BRL':true:'1.2-2' | trocaPontoVirgula }}</span>
+    </div>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Transação</th>
+            <th>Descrição</th>
+            <th>Débito</th>
+            <th>Crédito</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let item of extrato'>
+            <td>{{ item.dtTransacao | date:'dd/MM/yyyy' }}</td>
+            <td>Transferência</td>
+            <td>{{ item.observacao }}</td>
+            <td>{{ item.tpTransacao == "debito" ? (item.vlTransacao | currency:'BRL':true:'1.2-2' | trocaPontoVirgula)
+              : '-' }}</td>
+            <td>{{ item.tpTransacao == "credito" ? (item.vlTransacao | currency:'BRL':true:'1.2-2' | trocaPontoVirgula)
+              : '-' }}</td>
+            <td>{{ item.vlAtual | currency:'BRL':true:'1.2-2' | trocaPontoVirgula }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
